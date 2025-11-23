@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { NewsArticle, BookmarkedArticle } from '@/types/news';
+import { toast } from 'sonner';
 
 const BOOKMARKS_KEY = 'global-news-ai-bookmarks';
 
@@ -41,12 +42,19 @@ export function useBookmarks() {
       if (prev.some((b) => b.id === article.id)) {
         return prev;
       }
+      toast.success('Article bookmarked');
       return [bookmarkedArticle, ...prev];
     });
   };
 
   const removeBookmark = (articleId: string) => {
-    setBookmarks((prev) => prev.filter((b) => b.id !== articleId));
+    setBookmarks((prev) => {
+      const filtered = prev.filter((b) => b.id !== articleId);
+      if (filtered.length < prev.length) {
+        toast.info('Bookmark removed');
+      }
+      return filtered;
+    });
   };
 
   const isBookmarked = (articleId: string): boolean => {
@@ -55,6 +63,7 @@ export function useBookmarks() {
 
   const clearBookmarks = () => {
     setBookmarks([]);
+    toast.info('All bookmarks cleared');
   };
 
   return {

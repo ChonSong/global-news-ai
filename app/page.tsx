@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react';
 import { NewsArticle, NewsCategory } from '@/types/news';
-import { Header } from '@/components/header';
 import { SearchBar } from '@/components/search-bar';
 import { CategoryFilter } from '@/components/category-filter';
 import { NewsGrid } from '@/components/news-grid';
@@ -71,8 +70,6 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-background">
-      <Header />
-
       <main className="container mx-auto px-4 py-8">
         <div className="mb-8 space-y-4">
           <div className="space-y-2">

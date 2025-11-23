@@ -3,7 +3,6 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'next/navigation';
 import { NewsArticle } from '@/types/news';
-import { Header } from '@/components/header';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { getNews } from '@/lib/actions/news-actions';
@@ -30,6 +29,8 @@ export default function ArticlePage() {
   const loadArticle = async () => {
     setLoading(true);
     try {
+      // TODO: optimize this by fetching single article from API/DB instead of all news
+      // Currently limitation of RSS/NewsAPI implementation without backend persistence
       const articles = await getNews('all');
       const found = articles.find(a => a.id === articleId);
 
@@ -73,7 +74,6 @@ export default function ArticlePage() {
   if (loading) {
     return (
       <div className="min-h-screen bg-background">
-        <Header />
         <div className="flex min-h-[60vh] items-center justify-center">
           <Loader2 className="h-8 w-8 animate-spin text-primary" />
         </div>
@@ -84,7 +84,6 @@ export default function ArticlePage() {
   if (!article) {
     return (
       <div className="min-h-screen bg-background">
-        <Header />
         <div className="container mx-auto px-4 py-8">
           <div className="text-center">
             <h1 className="mb-4 text-2xl font-bold">Article Not Found</h1>
@@ -102,8 +101,6 @@ export default function ArticlePage() {
 
   return (
     <div className="min-h-screen bg-background">
-      <Header />
-
       <main className="container mx-auto px-4 py-8">
         <div className="mb-6">
           <Button variant="ghost" asChild>
