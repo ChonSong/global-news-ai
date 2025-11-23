@@ -1,6 +1,5 @@
 'use client';
 
-import { Header } from '@/components/header';
 import { NewsGrid } from '@/components/news-grid';
 import { useBookmarks } from '@/lib/hooks/use-bookmarks';
 import { Button } from '@/components/ui/button';
@@ -12,8 +11,6 @@ export default function BookmarksPage() {
 
   return (
     <div className="min-h-screen bg-background">
-      <Header />
-
       <main className="container mx-auto px-4 py-8">
         <div className="mb-6 flex items-center justify-between">
           <Button variant="ghost" asChild>
