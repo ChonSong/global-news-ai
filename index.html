@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Global News AI - AI-Powered News Aggregator</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="min-h-screen bg-gray-50 dark:bg-gray-900">
+  <nav class="bg-white shadow-lg dark:bg-gray-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16">
+        <div class="flex items-center">
+          <i class="fas fa-globe-americas text-blue-600 text-2xl mr-3"></i>
+          <span class="text-xl font-bold text-gray-900 dark:text-white">Global News AI</span>
+        </div>
+        <div class="flex items-center space-x-4">
+          <button class="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white">
+            <i class="fas fa-moon"></i>
+          </button>
+          <button class="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white">
+            <i class="fas fa-bookmark"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+    <div class="px-4 py-6 sm:px-0">
+      <div class="text-center mb-8">
+        <h1 class="text-4xl font-extrabold text-gray-900 dark:text-white sm:text-5xl">
+          AI-Powered <span class="text-blue-600">News Intelligence</span>
+        </h1>
+        <p class="mt-5 max-w-xl mx-auto text-xl text-gray-500 dark:text-gray-400">
+          Get personalized news summaries, fact-checking, and insights powered by advanced AI
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6 mb-8">
+        <button class="category-btn bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors" data-category="all">
+          All News
+        </button>
+        <button class="category-btn bg-gray-200 text-gray-800 px-4 py-2 rounded-lg hover:bg-gray-300 transition-colors" data-category="technology">
+          Technology
+        </button>
+        <button class="category-btn bg-gray-200 text-gray-800 px-4 py-2 rounded-lg hover:bg-gray-300 transition-colors" data-category="business">
+          Business
+        </button>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="news-grid">
+        <!-- Sample News Articles -->
+        <article class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow dark:bg-gray-800">
+          <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400" alt="AI News" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-sm text-blue-600 font-semibold">Technology</span>
+              <span class="text-xs text-gray-500">2 hours ago</span>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2 dark:text-white">AI Revolution Transforms Global Industries</h3>
+            <p class="text-gray-600 dark:text-gray-400 mb-4">Artificial intelligence continues to reshape how businesses operate and deliver value to customers worldwide...</p>
+            <div class="flex items-center justify-between">
+              <span class="text-sm text-gray-500">TechCrunch</span>
+              <button class="text-blue-600 hover:text-blue-800">
+                Read more →
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow dark:bg-gray-800">
+          <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=400" alt="Market News" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-sm text-green-600 font-semibold">Business</span>
+              <span class="text-xs text-gray-500">4 hours ago</span>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2 dark:text-white">Global Markets Show Strong Recovery</h3>
+            <p class="text-gray-600 dark:text-gray-400 mb-4">Stock markets around the world are showing signs of robust recovery as investor confidence returns...</p>
+            <div class="flex items-center justify-between">
+              <span class="text-sm text-gray-500">Financial Times</span>
+              <button class="text-blue-600 hover:text-blue-800">
+                Read more →
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow dark:bg-gray-800">
+          <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400" alt="Science News" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-sm text-purple-600 font-semibold">Science</span>
+              <span class="text-xs text-gray-500">6 hours ago</span>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2 dark:text-white">Breakthrough in Renewable Energy Storage</h3>
+            <p class="text-gray-600 dark:text-gray-400 mb-4">Scientists announce major breakthrough in battery technology that could revolutionize renewable energy...</p>
+            <div class="flex items-center justify-between">
+              <span class="text-sm text-gray-500">Nature Journal</span>
+              <button class="text-blue-600 hover:text-blue-800">
+                Read more →
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow dark:bg-gray-800">
+          <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=400" alt="Health News" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-sm text-red-600 font-semibold">Health</span>
+              <span class="text-xs text-gray-500">8 hours ago</span>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2 dark:text-white">New Medical Advancements Promise Longer Lives</h3>
+            <p class="text-gray-600 dark:text-gray-400 mb-4">Revolutionary medical treatments show promising results in extending human lifespan and quality of life...</p>
+            <div class="flex items-center justify-between">
+              <span class="text-sm text-gray-500">Medical News Today</span>
+              <button class="text-blue-600 hover:text-blue-800">
+                Read more →
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow dark:bg-gray-800">
+          <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400" alt="Space News" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-sm text-indigo-600 font-semibold">Space</span>
+              <span class="text-xs text-gray-500">10 hours ago</span>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2 dark:text-white">Mars Colony Project Takes Major Step Forward</h3>
+            <p class="text-gray-600 dark:text-gray-400 mb-4">Space agencies announce successful completion of critical tests for upcoming Mars colonization mission...</p>
+            <div class="flex items-center justify-between">
+              <span class="text-sm text-gray-500">Space News</span>
+              <button class="text-blue-600 hover:text-blue-800">
+                Read more →
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow dark:bg-gray-800">
+          <img src="https://images.unsplash.com/photo-1526379095098-d400fd0bf935?w=400" alt="Sports News" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-sm text-orange-600 font-semibold">Sports</span>
+              <span class="text-xs text-gray-500">12 hours ago</span>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2 dark:text-white">Historic Victory in Championship Finals</h3>
+            <p class="text-gray-600 dark:text-gray-400 mb-4">Underdog team claims stunning victory in one of the most dramatic championship finals in recent memory...</p>
+            <div class="flex items-center justify-between">
+              <span class="text-sm text-gray-500">ESPN</span>
+              <button class="text-blue-600 hover:text-blue-800">
+                Read more →
+              </button>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="text-center mt-12">
+        <button class="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors text-lg font-semibold">
+          Load More Articles
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-gray-800 text-white mt-12">
+    <div class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <p class="text-gray-400">© 2024 Global News AI. Powered by advanced AI technology.</p>
+        <p class="text-gray-500 text-sm mt-2">Get personalized news summaries and fact-checking</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Simple category filtering
+    document.querySelectorAll('.category-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.category-btn').forEach(b => {
+          b.classList.remove('bg-blue-600', 'text-white');
+          b.classList.add('bg-gray-200', 'text-gray-800');
+        });
+        this.classList.remove('bg-gray-200', 'text-gray-800');
+        this.classList.add('bg-blue-600', 'text-white');
+      });
+    });
+  </script>
+</body>
+</html>
